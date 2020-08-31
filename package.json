@@ -1,0 +1,44 @@
+{
+  "name": "amazon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "aws-sdk": "^2.717.0",
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "eslint": "^6.6.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react-hooks": "^4.0.8",
+    "eslint-plugin-react": "^7.20.3",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.24",
+    "multer-s3": "^2.9.0",
+    "multer": "^1.4.2",
+    "react-redux": "^7.2.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+
+    "@babel/cli": "^7.10.4",
+    "@babel/core": "^7.10.4",
+    "@babel/node": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
+    "nodemon": "^2.0.4"
+  },
+  "scripts": {
+    "start": "nodemon --watch backend --exec babel-node backend/server.js",
+    "build": "del -f dist && babel backend -d dist",
+    "heroku-postbuild": "npm run build && cd fronte && npm install && npm run build"
+    
+  },
+  "author": "ian murithi",
+  "license": "ISC",
+
+  "homepage": "https://github.com/iante/stylez-react-app"
+  
+}
+
+
