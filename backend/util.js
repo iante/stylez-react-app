@@ -14,7 +14,7 @@ const getToken = (user) => {
     }
   );
 };
-
+/*checking if signed in user exists */
 const isAuth = (req, res, next) => {
   const token = req.headers.authorization;
 
@@ -32,7 +32,7 @@ const isAuth = (req, res, next) => {
     return res.status(401).send({ message: 'Token is not supplied.' });
   }
 };
-
+/* checking if signed in user is and admin or not*/
 const isAdmin = (req, res, next) => {
   console.log(req.user);
   if (req.user && req.user.isAdmin) {
