@@ -27,13 +27,13 @@ and if the item doesnt exist it returns an empty array || [];*/
 const cartItems = Cookie.getJSON('cartItems') || [];
 const userInfo = Cookie.getJSON('userInfo') || null;
 
-const initialState = {cart:{cartItems, shipping:{}, payment:{}}, userSignin:{userInfo}}; /*initial state is an empty object */
+const initialState = {cart:{cartItems, shipping:{}, payment:{}}, userSignin:{userInfo}}; /*initial state is empty */
 
 const reducer = combineReducers({
 
-    productList: productListReducer, /* we are defining a productList whose values should come from 
-    productListReducer which is a function we have created in the productReducers.js file.
-    REDUCER is a function that gets a state from an action and returns a new state based on the action */
+    productList: productListReducer, /*defining a productList whose values come from 
+    productListReducer which is a function i created in the productReducers.js file.
+    */
     cart: cartReducer,
     productDetails: productDetailsReducer,
     productSave: productSaveReducer,
@@ -52,7 +52,7 @@ const reducer = combineReducers({
 });
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(reducer, initialState, composeEnhancer(applyMiddleware(thunk)));
-/*compose(applyMiddleware(thunk) is a middleware that allows us to run an async action in redux */
+/*compose(applyMiddleware(thunk) is a middleware that allows running an async action in redux */
 
 export default store;
 
