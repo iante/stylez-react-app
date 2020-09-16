@@ -15,15 +15,13 @@ import { PRODUCT_LIST_SUCCESS,
     PRODUCT_REVIEW_SAVE_FAIL,
     PRODUCT_REVIEW_SAVE_RESET, } from "../constants/productConstants";
 
-function productListReducer(state = { products: [] }, action)/* we are setting the initial state to be an empty array. */
+function productListReducer(state = { products: [] }, action)
 {
 
 switch (action.type) {
 
     case PRODUCT_LIST_REQUEST:
-        return{loading: true,products:[] }; /* in the event user click on product on the home screen and a request
-        is sent to the server to fetch the results, the loading: true will cause the round loading icon
-        to appear on the image. */
+        return{loading: true,products:[] }; /*setting loading in the event the products array is empty */
         case PRODUCT_LIST_SUCCESS:
             return{loading: false, products: action.payload};
 
@@ -42,9 +40,7 @@ function productDetailsReducer(state = { product: { reviews: [] } }, action) {
 switch (action.type) {
 
     case PRODUCT_DETAILS_REQUEST:
-        return{loading: true}; /* in the event user click on product on the home screen and a request
-        is sent to the server to fetch the results, the loading: true will cause the round loading icon
-        to appear on the image. */
+        return{loading: true};
         case PRODUCT_DETAILS_SUCCESS:
             return{loading: false, product: action.payload};
 
@@ -58,15 +54,13 @@ switch (action.type) {
 }
 
 
-function productSaveReducer(state = { product: {} }, action)/* we are setting the initial state to be an empty array. */
+function productSaveReducer(state = { product: {} }, action)
 {
 
 switch (action.type) {
 
     case PRODUCT_SAVE_REQUEST:
-        return{loading: true}; /* in the event user click on product on the home screen and a request
-        is sent to the server to fetch the results, the loading: true will cause the round loading icon
-        to appear on the image. */
+        return{loading: true}; 
         case PRODUCT_SAVE_SUCCESS:
             return{loading: false, success:true, product: action.payload};
 
@@ -79,15 +73,13 @@ switch (action.type) {
 
 }
 
-function productDeleteReducer(state = { product: {} }, action)/* we are setting the initial state to be an empty array. */
+function productDeleteReducer(state = { product: {} }, action)
 {
 
 switch (action.type) {
 
     case PRODUCT_DELETE_REQUEST:
-        return{loading: true}; /* in the event user click on product on the home screen and a request
-        is sent to the server to fetch the results, the loading: true will cause the round loading icon
-        to appear on the image. */
+        return{loading: true}; 
         case PRODUCT_DELETE_SUCCESS:
             return{loading: false, success:true, product: action.payload};
 
