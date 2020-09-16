@@ -21,7 +21,7 @@ mongoose.connect(mongodbUrl, {
     useCreateIndex: true
 }).catch(error => console.log(error.reason));
 
-{/* we are creating a server that renders the products to the clients*/}
+{/* server that renders the products to the clients*/}
 
 const app = express();
 
@@ -41,33 +41,6 @@ app.get('/api/config/paypal', (req, res) => {
 app.get('*', (req, res) => {
   res.sendFile(path.join(`${__dirname}/../fronte/build/index.html`));
 });
-
-
-//app.get("/api/products",(req, res) =>{
-
-   // res.send(data.products);
-//});
-
-//app.get("/api/products/:id",(req, res) =>{
-
-  //  const productId = req.params.id;
-     /* instead of returning an array of products as response, server returns the ID
-    data.products.find(x=>x._id ===productId) checks whether the productID matches the id in the array*/ 
-    
-  //  const product = data.products.find(x=>x._id ===productId);
-     /* if the product ids match , server should respond with product, else if not return status 404 
-    and a message server not found!!*/
-   // if(product)
-   // res.send(product)
-   // else
-   // res.status(404).send({msg: "Product not found!!"})
-   
-//});
-
-
-
-{/* when creating a server olisten, the two paarameters are port and a call back function
-which is called when the server runs. */}
 
 app.listen(config.PORT, () => {
    console.log('Server started at http://localhost:5000');
